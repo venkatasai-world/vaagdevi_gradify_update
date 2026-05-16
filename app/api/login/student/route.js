@@ -12,7 +12,10 @@ export async function POST(req) {
 
     await connectToDatabase();
 
-    const student = await Student.findOne({ email, password });
+    const student = await Student.findOne({ 
+      email: { $regex: new RegExp(`^${email}$`, 'i') }, 
+      password: { $regex: new RegExp(`^${password}$`, 'i') } 
+    });
 
     if (!student) {
       return NextResponse.json({ error: 'Invalid Email or Password' }, { status: 401 });
