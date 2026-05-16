@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 
 export default function StudentDashboard() {
   const router = useRouter();
-  const [selectedSemester, setSelectedSemester] = useState('V');
+  const [selectedSemester, setSelectedSemester] = useState('VI');
   const [studentData, setStudentData] = useState(null);
 
   useEffect(() => {

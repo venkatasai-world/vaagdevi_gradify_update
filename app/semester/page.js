@@ -2,8 +2,7 @@
 import Link from 'next/link';
 
 export default function Semesters() {
-  const semesters = ['I', 'II', 'III', 'IV', 'V'];
-
+  const semesters = ['I', 'II', 'III', 'IV', 'V', 'VI'];
   return (
     <div style={{ padding: '40px', maxWidth: '800px', margin: '0 auto', fontFamily: 'sans-serif' }}>
       <h2 style={{ borderBottom: '2px solid #0070f3', paddingBottom: '10px' }}>Select Your Semester</h2>
