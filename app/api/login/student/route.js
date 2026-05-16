@@ -4,11 +4,14 @@ import Student from '../../../../models/Student';
 
 export async function POST(req) {
   try {
-    const { email, password } = await req.json();
+    const { email: rawEmail, password: rawPassword } = await req.json();
 
-    if (!email || !password) {
+    if (!rawEmail || !rawPassword) {
       return NextResponse.json({ error: 'Email and password are required' }, { status: 400 });
     }
+
+    const email = rawEmail.trim();
+    const password = rawPassword.trim();
 
     await connectToDatabase();
 
