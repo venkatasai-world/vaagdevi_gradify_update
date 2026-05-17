@@ -56,30 +56,20 @@ export default function SemesterMid({ params }) {
   const subjects = semesterSubjects[sem] || [];
 
   return (
-    <div style={{ padding: '40px', maxWidth: '800px', margin: '0 auto', fontFamily: 'sans-serif' }}>
-      <h2 style={{ borderBottom: '2px solid #0070f3', paddingBottom: '10px' }}>
+    <div className="p-4 sm:p-8 md:p-10 max-w-3xl mx-auto font-sans min-h-screen">
+      <h2 className="border-b-2 border-blue-600 pb-2 md:pb-3 text-xl md:text-2xl font-bold text-gray-800">
         Semester {sem} - Subjects
       </h2>
-      <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+      <div className="mt-5 flex flex-col gap-3 sm:gap-4">
         {subjects.map((sub, index) => (
-          <Link key={index} href={`/semester/${sem}/${encodeURIComponent(sub)}`} style={{
-            padding: '15px 20px',
-            backgroundColor: '#fff',
-            border: '1px solid #e0e0e0',
-            borderRadius: '8px',
-            textDecoration: 'none',
-            color: '#0070f3',
-            fontSize: '16px',
-            boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
-            display: 'block'
-          }}>
+          <Link key={index} href={`/semester/${sem}/${encodeURIComponent(sub)}`} className="p-4 sm:p-5 bg-white border border-gray-200 rounded-lg no-underline text-blue-600 text-base sm:text-lg shadow-sm block hover:shadow-md hover:border-blue-400 transition-all">
             {sub}
           </Link>
         ))}
-        {subjects.length === 0 && <p>No subjects found for this semester.</p>}
+        {subjects.length === 0 && <p className="text-gray-600">No subjects found for this semester.</p>}
       </div>
-      <div style={{ marginTop: '30px' }}>
-        <Link href="/semester" style={{ color: '#555', textDecoration: 'none' }}>
+      <div className="mt-6 sm:mt-8">
+        <Link href="/semester" className="text-gray-500 hover:text-gray-800 transition-colors font-medium">
           &larr; Back to Semesters
         </Link>
       </div>
