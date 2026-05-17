@@ -18,13 +18,14 @@ export default function Home() {
         .center-img {
           display: flex;
           justify-content: center;
-          margin-top: 20px;
+          margin: 20px auto 10px;
+          padding: 0 16px;
         }
 
         img.logo {
           height: 120px;
           width: 100%;
-          max-width: 1200px;
+          max-width: 450px;
         }
 
         .about-section {
@@ -32,10 +33,9 @@ export default function Home() {
           align-items: center;
           justify-content: space-between;
           gap: 40px;
-          margin: 40px auto;
+          margin: 30px auto;
           padding: 40px;
-          width: 90%;
-          max-width: 1000px;
+          width: min(100%, 1000px);
           background-color: #e1f5e9;
           border: 2px solid #4CAF50;
           border-radius: 20px;
@@ -69,6 +69,7 @@ export default function Home() {
           flex-direction: column;
           align-items: center;
           margin-top: 30px;
+          padding: 0 16px;
         }
 
         @media (max-width: 768px) {
@@ -76,6 +77,7 @@ export default function Home() {
             flex-direction: column;
             text-align: center;
             padding: 20px;
+            gap: 24px;
           }
 
           .about-section img {
@@ -93,6 +95,11 @@ export default function Home() {
 
           .about-text p {
             font-size: 18px;
+          }
+
+          button {
+            width: 100%;
+            max-width: 300px;
           }
         }
 
