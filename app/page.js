@@ -29,26 +29,39 @@ export default function Home() {
 
         .about-section {
           display: flex;
-          justify-content: center;
           align-items: center;
+          justify-content: space-between;
+          gap: 40px;
           margin: 40px auto;
-          padding: 20px;
+          padding: 40px;
           width: 90%;
           max-width: 1000px;
           background-color: #e1f5e9;
           border: 2px solid #4CAF50;
-          border-radius: 10px;
+          border-radius: 20px;
         }
 
         .about-section img {
-          width: 250px;
+          width: 350px;
+          max-width: 100%;
           height: auto;
-          margin-right: 30px;
           border-radius: 10px;
         }
 
         .about-text {
+          flex: 1;
           text-align: left;
+        }
+
+        .about-text h3 {
+          font-size: 36px;
+          margin-bottom: 16px;
+        }
+
+        .about-text p {
+          font-size: 20px;
+          line-height: 1.6;
+          margin: 0;
         }
 
         .login_button {
@@ -56,6 +69,31 @@ export default function Home() {
           flex-direction: column;
           align-items: center;
           margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+          .about-section {
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+          }
+
+          .about-section img {
+            width: 250px;
+            margin: 0 auto;
+          }
+
+          .about-text {
+            text-align: center;
+          }
+
+          .about-text h3 {
+            font-size: 28px;
+          }
+
+          .about-text p {
+            font-size: 18px;
+          }
         }
 
         button {
